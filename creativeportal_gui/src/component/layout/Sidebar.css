@@ -1,0 +1,13 @@
+.site_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 100;
+    background-color: #1DA1F2;
+    border-radius: 10px 0 0 10px;
+}
+
+.site_header img {
+    width: 80px;
+}
