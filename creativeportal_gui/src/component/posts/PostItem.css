@@ -26,4 +26,21 @@
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.social_icon_layout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}
+
+.post_item_image:hover .social_icon_layout{
+    opacity: 1;
+    transition: 0.5s;
 }

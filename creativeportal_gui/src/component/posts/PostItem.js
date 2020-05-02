@@ -3,6 +3,8 @@ import "./PostItem.css"
 
 import ProfilePicture from "../user/ProfilePicture";
 
+import SocialButton from "./SocialButton";
+
 function PostItem(props) {
     const {post_data, index} = props
 
@@ -14,7 +16,11 @@ function PostItem(props) {
             </div>
 
             <div className="post_item_image" style={{backgroundImage: `url(${post_data.photo}${index})`}}>
-
+                <div className="social_icon_layout">
+                    <SocialButton icon={"far fa-comments"} number={10}/>
+                    <SocialButton icon={"fas fa-thumbs-up"} number={243}/>
+                    <SocialButton icon={"far fa-star"} number={131}/>
+                </div>
             </div>
         </div>
     );
