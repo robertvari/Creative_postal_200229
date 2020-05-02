@@ -15,13 +15,11 @@ const post_data = {
 }
 
 function PostList(props) {
+    const range = Array.from({ length: 30 - 0 + 1 }, (_, i) => i);
+
     return (
         <div className="post_list_layout">
-            <PostItem post_data={post_data}/>
-            <PostItem post_data={post_data}/>
-            <PostItem post_data={post_data}/>
-            <PostItem post_data={post_data}/>
-            <PostItem post_data={post_data}/>
+            {range.map(index => <PostItem post_data={post_data} key={index} index={index}/>)}
         </div>
     );
 }

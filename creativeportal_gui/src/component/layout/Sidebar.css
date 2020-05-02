@@ -1,6 +1,7 @@
 .side_panel {
     display: flex;
     flex-direction: column;
+    position: fixed;
 }
 
 .site_header {

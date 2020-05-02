@@ -1,4 +1,5 @@
 .home_layout {
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: 200px auto 200px;
 }

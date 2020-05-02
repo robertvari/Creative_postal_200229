@@ -1,0 +1,26 @@
+input {
+    background-color: #253341;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.icon_field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon_field input {
+    padding-left: 35px;
+}
+
+.icon_field i {
+    position: absolute;
+    opacity: 0.5;
+    margin-left: 10px;
+}
