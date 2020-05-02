@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Home from "./component/Home";
+
 function App() {
   return (
     <div className="App">
-        <i className="fas fa-camera"/>Creative Portal
+
+      <Home/>
+
     </div>
   );
 }
