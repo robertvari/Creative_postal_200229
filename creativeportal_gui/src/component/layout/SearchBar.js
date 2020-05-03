@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.css'
 
-import IconField from "../fields/IconField";
+import IconField from "../widgets/IconField";
 
 function SearchBar(props) {
     return (

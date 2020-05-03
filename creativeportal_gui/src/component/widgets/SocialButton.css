@@ -1,0 +1,12 @@
+.social_button {
+    cursor: pointer;
+}
+
+.social_button:hover{
+    color: #1DA1F2;
+    transition: 0.3s;
+}
+
+.button_active {
+    color: #1DA1F2;
+}
