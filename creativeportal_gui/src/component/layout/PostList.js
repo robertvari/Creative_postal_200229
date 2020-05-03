@@ -11,7 +11,8 @@ const post_data = {
     },
     id: 1,
     title: "Post Title",
-    photo: "https://source.unsplash.com/1600x900/?nature,water"
+    photo: "https://source.unsplash.com/1600x900/?nature,water",
+    slug: "post-url-slug"
 }
 
 function PostList(props) {

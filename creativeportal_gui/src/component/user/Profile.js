@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Profile.css'
 
 import ProfilePicture from "./ProfilePicture";
 import IconField from "../widgets/IconField";
+import {useParams} from "react-router-dom";
 
 function Profile(props) {
+    const {slug} = useParams()
+
     return (
         <div className="user_profile_layout">
             <ProfilePicture index={0} width={"200px"}/>
@@ -17,7 +20,7 @@ function Profile(props) {
                     <IconField icon={"fas fa-map-marker-alt"} placeholder={"Address"}/>
                     <IconField icon={"fas fa-briefcase"} placeholder={"Job title"}/>
 
-                    <IconField icon={"fab fa-linkedin-in"} placeholder={"Linkedin"}/>
+                    <IconField icon={"fab fa-linkedin"} placeholder={"Linkedin"}/>
                     <IconField icon={"fab fa-twitter"} placeholder={"Twitter"}/>
                     <IconField icon={"fab fa-instagram"} placeholder={"Instagram"}/>
                 </div>

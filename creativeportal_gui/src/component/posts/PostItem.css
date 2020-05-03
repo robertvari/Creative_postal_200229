@@ -4,6 +4,7 @@
     display: grid;
     grid-gap: 5px;
     grid-template-rows: 30px auto;
+    color: white;
 }
 
 .post_item_header {

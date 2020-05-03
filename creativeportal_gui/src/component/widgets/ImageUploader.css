@@ -1,0 +1,12 @@
+#image_drop_area {
+    width: 100%;
+    min-height: 500px;
+    background-color: rgba(29, 161, 242, 0.3);
+    border: 3px dashed #1DA1F2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+}

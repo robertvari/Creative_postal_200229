@@ -22,12 +22,18 @@ hr{
 
 a {
   text-decoration: none;
+  color: #88d1f1;
+}
+
+a:hover {
+  color: #1DA1F2;
 }
 
 textarea {
   font-size: inherit;
   font-family: inherit;
   resize: vertical;
+  width: 100%;
   background-color: #253341;
   border: none;
   padding: 10px;

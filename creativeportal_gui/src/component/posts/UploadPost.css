@@ -1,0 +1,14 @@
+.upload_page_layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload_page_layout button {
+    align-self: flex-end;
+}
+
+.tag_list_layout input {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+}

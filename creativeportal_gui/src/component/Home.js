@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Switch,
-  Route,
+    BrowserRouter as Router,
+    Switch,
+    Route,
 } from "react-router-dom";
 
 import './Home.css'
@@ -16,12 +17,14 @@ import UserLikes from "./user/UserLikes";
 import UserFavorites from "./user/UserFavorites";
 import UserCollections from "./user/UserCollections";
 import Logout from "./user/Logout";
-
+import Login from "./user/Login";
+import Registration from "./user/Registration";
+import PostDetail from "./posts/PostDetail";
 
 function Home(props) {
     return (
         <div className="home_layout">
-
+            <Router>
                 <Sidebar/>
 
                 <Switch>
@@ -31,6 +34,10 @@ function Home(props) {
 
                     <Route path={"/profile/:slug"}>
                         <Profile/>
+                    </Route>
+
+                    <Route path={"/posts/:slug"}>
+                        <PostDetail/>
                     </Route>
 
                     <Route path={"/upload"}>
@@ -57,9 +64,18 @@ function Home(props) {
                         <Logout/>
                     </Route>
 
+                    <Route path={"/login"}>
+                        <Login/>
+                    </Route>
+
+                    <Route path={"/registration"}>
+                        <Registration/>
+                    </Route>
+
                 </Switch>
 
                 <SearchBar/>
+            </Router>
 
         </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import "./PostItem.css"
 
 import ProfilePicture from "../user/ProfilePicture";
@@ -9,7 +10,7 @@ function PostItem(props) {
     const {post_data, index} = props
 
     return (
-        <div className="post_item">
+        <Link to={`/posts/${post_data.slug}`} className="post_item">
             <div className="post_item_header">
                 <ProfilePicture width={"45px"} index={index}/>
                 {post_data.author.name}
@@ -22,7 +23,7 @@ function PostItem(props) {
                     <SocialButton icon={"far fa-star"} number={131} clickable={true}/>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
