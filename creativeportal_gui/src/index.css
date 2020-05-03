@@ -19,3 +19,35 @@ hr{
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin: 10px 0;
 }
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  resize: vertical;
+  background-color: #253341;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  color: white;
+}
+
+button {
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #1DA1F2;
+  color: white;
+}
+
+button:hover {
+  background-color: #1885cb;
+  transition: 0.3s;
+}

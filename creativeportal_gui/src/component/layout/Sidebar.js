@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+
+
 import Logo from "../images/logo.png"
 import "./Sidebar.css"
 
@@ -18,29 +21,31 @@ function Sidebar(props) {
     return (
         <div>
             <div className="side_panel">
-                <div className="site_header">
-                    <img src={Logo} alt=""/>
-                    Creative Portal
-                </div>
+                <Link to={"/"}>
+                    <div className="site_header">
+                        <img src={Logo} alt=""/>
+                        Creative Portal
+                    </div>
+                </Link>
 
                 <hr/>
 
-                <ProfilePicture width={"150px"} index={0}/>
+                <Link to="/profile/robert_vari"><ProfilePicture width={"150px"} index={0}/></Link>
 
                 <hr/>
 
-                <MenuItem text={"Upload Photo"} icon={"fas fa-cloud-upload-alt"}/>
+                <Link to="/upload"><MenuItem text={"Upload Photo"} icon={"fas fa-cloud-upload-alt"}/></Link>
 
                 <hr/>
 
-                <MenuItem text={"Home"} icon={"fas fa-home"}/>
-                <MenuItem text={"Notifications"} icon={"fas fa-bell"}/>
-                <MenuItem text={"Likes"} icon={"fas fa-thumbs-up"}/>
-                <MenuItem text={"Favorites"} icon={"fas fa-star"}/>
-                <MenuItem text={"Collections"} icon={"fas fa-object-group"}/>
+                <Link to={"/"}><MenuItem text={"Home"} icon={"fas fa-home"}/></Link>
+                <Link to={"/user/notifications"}><MenuItem text={"Notifications"} icon={"fas fa-bell"}/></Link>
+                <Link to={"/user/likes"}><MenuItem text={"Likes"} icon={"fas fa-thumbs-up"}/></Link>
+                <Link to={"/user/favorites"}><MenuItem text={"Favorites"} icon={"fas fa-star"}/></Link>
+                <Link to={"/user/collections"}><MenuItem text={"Collections"} icon={"fas fa-object-group"}/></Link>
 
                 <hr/>
-                <MenuItem text={"Log Out"} icon={"fas fa-sign-out-alt"}/>
+                <Link to={"/logout"}><MenuItem text={"Log Out"} icon={"fas fa-sign-out-alt"}/></Link>
 
             </div>
         </div>

@@ -12,6 +12,7 @@
     font-weight: 100;
     background-color: #1DA1F2;
     border-radius: 10px 0 0 10px;
+    color: white;
 }
 
 .site_header img {
@@ -27,6 +28,8 @@
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .menu_item:hover {

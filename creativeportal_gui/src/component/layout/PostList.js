@@ -15,7 +15,7 @@ const post_data = {
 }
 
 function PostList(props) {
-    const range = Array.from({ length: 30 - 0 + 1 }, (_, i) => i);
+    const range = Array.from({ length: 5 - 0 + 1 }, (_, i) => i);
 
     return (
         <div className="post_list_layout">

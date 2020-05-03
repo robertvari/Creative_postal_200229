@@ -1,0 +1,19 @@
+.user_profile_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile_fields_layout {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 200px auto;
+}
+
+.profile_fields_layout .icon_field:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.user_profile_layout button {
+    align-self: flex-end;
+}
