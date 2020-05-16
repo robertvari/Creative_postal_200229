@@ -25,3 +25,18 @@ form input {
 .form_header .site_header {
     margin-right: 20px;
 }
+
+.form_help {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-left: 50px;
+}
+
+.clickbox_layout {
+    display: flex;
+    cursor: pointer;
+}
+
+.clickbox_layout input {
+    margin-right: 10px;
+}

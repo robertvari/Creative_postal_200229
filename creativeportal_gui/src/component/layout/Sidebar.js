@@ -53,8 +53,8 @@ function Sidebar(props) {
 
                     :
                     <Fragment>
-                        <Link to={"/user/login"}><MenuItem text={"Log In"} icon={"fas fa-sign-in-alt"}/></Link>
-                        <Link to={"/user/registration"}><MenuItem text={"Register"} icon={"fas fa-user-plus"}/></Link>
+                        <Link to={"/user/login"}><MenuItem text={"Sign In"} icon={"fas fa-sign-in-alt"}/></Link>
+                        <Link to={"/user/registration"}><MenuItem text={"Sign Up"} icon={"fas fa-user-plus"}/></Link>
                     </Fragment>
                 }
 
