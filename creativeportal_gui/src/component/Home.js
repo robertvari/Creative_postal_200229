@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
@@ -16,67 +15,53 @@ import Notifications from "./user/Notifications";
 import UserLikes from "./user/UserLikes";
 import UserFavorites from "./user/UserFavorites";
 import UserCollections from "./user/UserCollections";
-import Logout from "./user/Logout";
-import Login from "./user/Login";
-import Registration from "./user/Registration";
 import PostDetail from "./posts/PostDetail";
+import PageNotFound from "./layout/PageNotFound";
 
 function Home(props) {
     return (
         <div className="home_layout">
-            <Router>
                 <Sidebar/>
-
                 <Switch>
-                    <Route exact path={"/"}>
+                    <Route exact path="/">
                         <PostList/>
                     </Route>
 
-                    <Route path={"/profile/:slug"}>
+                    <Route path="/profile/:slug">
                         <Profile/>
                     </Route>
 
-                    <Route path={"/posts/:slug"}>
+                    <Route path="/posts/:slug">
                         <PostDetail/>
                     </Route>
 
-                    <Route path={"/upload"}>
+                    <Route path="/upload">
                         <UploadPost/>
                     </Route>
 
-                    <Route path={"/user/notifications"}>
+                    <Route path="/user/notifications">
                         <Notifications/>
                     </Route>
 
-                    <Route path={"/user/likes"}>
+                    <Route path="/user/likes">
                         <UserLikes/>
                     </Route>
 
-                    <Route path={"/user/favorites"}>
+                    <Route path="/user/favorites">
                         <UserFavorites/>
                     </Route>
 
-                    <Route path={"/user/collections"}>
+                    <Route path="/user/collections">
                         <UserCollections/>
                     </Route>
 
-                    <Route path={"/logout"}>
-                        <Logout/>
-                    </Route>
-
-                    <Route path={"/login"}>
-                        <Login/>
-                    </Route>
-
-                    <Route path={"/registration"}>
-                        <Registration/>
+                    <Route path="*">
+                        <PageNotFound/>
                     </Route>
 
                 </Switch>
 
                 <SearchBar/>
-            </Router>
-
         </div>
     );
 }

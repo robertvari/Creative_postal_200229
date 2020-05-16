@@ -51,13 +51,13 @@ function Sidebar(props) {
 
                         <hr/>
 
-                        <Link to={"/logout"}><MenuItem text={"Log Out"} icon={"fas fa-sign-out-alt"}/></Link>
+                        <Link to={"/user/logout"}><MenuItem text={"Log Out"} icon={"fas fa-sign-out-alt"}/></Link>
                     </Fragment>
 
                     :
                     <Fragment>
-                        <Link to={"/login"}><MenuItem text={"Log In"} icon={"fas fa-sign-in-alt"}/></Link>
-                        <Link to={"/registration"}><MenuItem text={"Register"} icon={"fas fa-user-plus"}/></Link>
+                        <Link to={"/user/login"}><MenuItem text={"Log In"} icon={"fas fa-sign-in-alt"}/></Link>
+                        <Link to={"/user/registration"}><MenuItem text={"Register"} icon={"fas fa-user-plus"}/></Link>
                     </Fragment>
                 }
 

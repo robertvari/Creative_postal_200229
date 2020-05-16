@@ -3,7 +3,7 @@ import React, {createContext, useState} from "react"
 export const UserContext = createContext(true)
 
 export const UserProvider = (props) => {
-    const [logged_in, set_logged_in] = useState(true)
+    const [logged_in, set_logged_in] = useState(false)
 
     return (
         <UserContext.Provider value={
