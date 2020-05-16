@@ -40,3 +40,9 @@ form input {
 .clickbox_layout input {
     margin-right: 10px;
 }
+
+.errors {
+    font-size: 0.8rem;
+    color: red;
+    margin-left: 30px;
+}
