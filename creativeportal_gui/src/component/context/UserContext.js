@@ -46,6 +46,11 @@ export const UserProvider = (props) => {
         }
     }
 
+    const log_out_user = () => {
+        removeCookies("token", {path: "/"})
+        set_logged_in(null)
+    }
+
     const check_token = () => {
         if(cookies.token){
             set_logged_in(cookies.token)
@@ -63,7 +68,8 @@ export const UserProvider = (props) => {
 
                 log_in_user: log_in_user,
                 validate_email: validate_email,
-                check_token: check_token
+                check_token: check_token,
+                log_out_user: log_out_user
             }
         }>
 
