@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {
     Switch,
     Route,
@@ -17,8 +17,15 @@ import UserFavorites from "./user/UserFavorites";
 import UserCollections from "./user/UserCollections";
 import PostDetail from "./posts/PostDetail";
 import PageNotFound from "./layout/PageNotFound";
+import {UserContext} from "./context/UserContext";
 
 function Home(props) {
+    const {check_token} = useContext(UserContext)
+
+    useEffect(() => {
+        check_token()
+    }, [])
+
     return (
         <div className="home_layout">
                 <Sidebar/>

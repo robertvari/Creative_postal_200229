@@ -1,8 +1,13 @@
 import React, {createContext, useState} from "react"
 import axios from 'axios'
+import {useCookies} from "react-cookie";
+
 export const UserContext = createContext(true)
 
+
 export const UserProvider = (props) => {
+    const [cookies, setCookies, removeCookies] = useCookies(["token"])
+
     const [logged_in, set_logged_in] = useState(null)
     const [errors, set_errors] = useState([])
     const API_URL = process.env.REACT_APP_API_URL
@@ -33,9 +38,17 @@ export const UserProvider = (props) => {
                 }
             })
 
-            set_logged_in(res.data.key)
+            const token = res.data.key
+            set_logged_in(token)
+            setCookies("token", token, {path: "/", sameSite:"strict", maxAge: 86400})
         }catch (e) {
             set_errors(["Invalid credentials"])
+        }
+    }
+
+    const check_token = () => {
+        if(cookies.token){
+            set_logged_in(cookies.token)
         }
     }
 
@@ -49,7 +62,8 @@ export const UserProvider = (props) => {
                 set_errors: set_errors,
 
                 log_in_user: log_in_user,
-                validate_email: validate_email
+                validate_email: validate_email,
+                check_token: check_token
             }
         }>
 
