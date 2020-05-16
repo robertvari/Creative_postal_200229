@@ -8,6 +8,7 @@ import "./Sidebar.css"
 
 import ProfilePicture from "../user/ProfilePicture";
 import {UserContext} from "../context/UserContext";
+import SiteLogo from "../widgets/SiteLogo";
 
 function MenuItem(props) {
     return (
@@ -24,12 +25,8 @@ function Sidebar(props) {
     return (
         <div>
             <div className="side_panel">
-                <Link to={"/"}>
-                    <div className="site_header">
-                        <img src={Logo} alt=""/>
-                        Creative Portal
-                    </div>
-                </Link>
+
+                <SiteLogo/>
 
                 <hr/>
 
