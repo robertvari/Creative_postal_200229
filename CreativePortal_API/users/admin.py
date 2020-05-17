@@ -1,7 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CreativeUser
+from .models import CreativeUser, Profile
+
+
+class UserProfileInline(admin.StackedInline):
+    model = Profile
 
 
 class CreativeUserAdmin(UserAdmin):
@@ -16,6 +20,8 @@ class CreativeUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {"fields": ("email", "password1", "password2")}),
     )
+
+    inlines = [UserProfileInline]
 
 
 admin.site.register(CreativeUser, CreativeUserAdmin)
