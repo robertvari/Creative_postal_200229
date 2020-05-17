@@ -29,7 +29,7 @@ function Login(props) {
 
     useEffect(() => {
         if(process.env.NODE_ENV === "development"){
-            set_email("mail.pythonsuli@gmail.com")
+            set_email("testuser@gmail.com")
             set_password("testpas123")
         }
     }, [])

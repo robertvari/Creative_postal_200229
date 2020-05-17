@@ -27,6 +27,25 @@ export const UserProvider = (props) => {
         return true
     }
 
+    const check_passwords = (password, password2) => {
+        if(password.length === 0){
+            set_errors(["You must set a password"])
+            return false
+        }
+
+        if(password.length < 6){
+            set_errors(["Password is to short"])
+            return false
+        }
+
+        if(password !== password2){
+            set_errors(["Passwords has to match"])
+            return false
+        }
+
+        return true
+    }
+
     const log_in_user = async (email, password) => {
         try{
             const res =  await axios({
@@ -44,6 +63,18 @@ export const UserProvider = (props) => {
         }catch (e) {
             set_errors(["Invalid credentials"])
         }
+    }
+
+    const register_user = (email, password) => {
+        axios({
+            method: "post",
+            url: `${API_URL}auth/registration/`,
+            data: {
+                email: email,
+                password1: password,
+                password2: password
+            }
+        })
     }
 
     const log_out_user = () => {
@@ -69,7 +100,9 @@ export const UserProvider = (props) => {
                 log_in_user: log_in_user,
                 validate_email: validate_email,
                 check_token: check_token,
-                log_out_user: log_out_user
+                log_out_user: log_out_user,
+                register_user: register_user,
+                check_passwords: check_passwords
             }
         }>
 

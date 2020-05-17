@@ -6,6 +6,7 @@ import {Route, Switch, BrowserRouter as Router,} from "react-router-dom";
 import Logout from "./component/user/Logout";
 import Login from "./component/user/Login";
 import Registration from "./component/user/Registration";
+import ConfirmEmail from "./component/user/ConfirmEmail";
 
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
 
                     <Route path="/user/login">
                         <Login/>
+                    </Route>
+
+                    <Route path="/user/confirm-email">
+                        <ConfirmEmail/>
                     </Route>
 
                     <Route path="/user/registration">
