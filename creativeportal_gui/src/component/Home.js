@@ -18,6 +18,7 @@ import UserCollections from "./user/UserCollections";
 import PostDetail from "./posts/PostDetail";
 import PageNotFound from "./layout/PageNotFound";
 import {UserContext} from "./context/UserContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function Home(props) {
     const {check_token} = useContext(UserContext)
@@ -42,25 +43,15 @@ function Home(props) {
                         <PostDetail/>
                     </Route>
 
-                    <Route path="/upload">
-                        <UploadPost/>
-                    </Route>
+                    <ProtectedRoute path="/upload" component={UploadPost}/>
 
-                    <Route path="/user/notifications">
-                        <Notifications/>
-                    </Route>
+                    <ProtectedRoute path="/user/notifications" component={Notifications}/>
 
-                    <Route path="/user/likes">
-                        <UserLikes/>
-                    </Route>
+                    <ProtectedRoute path="/user/likes" component={UserLikes}/>
 
-                    <Route path="/user/favorites">
-                        <UserFavorites/>
-                    </Route>
+                    <ProtectedRoute path="/user/favorites" component={UserFavorites}/>
 
-                    <Route path="/user/collections">
-                        <UserCollections/>
-                    </Route>
+                    <ProtectedRoute path="/user/collections" component={UserFavorites}/>
 
                     <Route path="*">
                         <PageNotFound/>
