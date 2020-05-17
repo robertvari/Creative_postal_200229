@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def email_sent(request):
+    return render(request, 'account/email_confirm.html')
