@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'corsheaders',
 
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'posts.apps.PostsConfig'
 ]
 
 SITE_ID = 1
