@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from users.views import email_sent
 from allauth.account.views import confirm_email
@@ -15,3 +17,7 @@ urlpatterns = [
 
     path('api/users/', include('users.urls'))
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

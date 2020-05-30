@@ -13,12 +13,9 @@ def email_sent(request):
     return render(request, 'account/email_confirm.html')
 
 
-class ProfileView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-    def get(self, request, slug):
-        profile = Profile.objects.get(slug=slug)
-        serializer = ProfilSerializer(profile)
+class UserView(APIView):
+    def get(self, request):
+        serializer = ProfilSerializer(request.user.profile, context={"request": request})
         return Response(serializer.data)
 
 
