@@ -49,6 +49,7 @@ function ProfileUpdate(props) {
         const formData = new FormData()
         formData.append('full_name', full_name)
         formData.append('address', address)
+        formData.append('job_title', job_title)
         formData.append('linkedin', linkedin)
         formData.append('twitter', twitter)
         formData.append('instagram', instagram)

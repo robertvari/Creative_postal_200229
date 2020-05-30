@@ -101,8 +101,20 @@ export const UserProvider = (props) => {
         set_user(res.data)
     }
 
-    const update_profile = (form_data) => {
-        console.log("Update user profile!")
+    const update_profile = async (form_data) => {
+        const res = await axios({
+            method: "patch",
+            url: `${API_URL}users/`,
+            headers : {
+                authorization: `token ${logged_in}`,
+                'content-type': 'multipart/form-data'
+            },
+            data: form_data
+        })
+
+        if(res.status === 202){
+            fetch_current_user()
+        }
     }
 
     useEffect(() => {
