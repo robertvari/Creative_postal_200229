@@ -30,4 +30,5 @@ class ProfilSerializer(serializers.ModelSerializer):
             "linkedin",
             "twitter",
             "instagram",
+            "slug"
         ]

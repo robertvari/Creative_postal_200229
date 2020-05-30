@@ -17,3 +17,21 @@
 .user_profile_layout button {
     align-self: flex-end;
 }
+
+.profile_picture_container{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.profile_picture_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

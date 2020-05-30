@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react"
+import React, {createContext, useEffect, useState} from "react"
 import axios from 'axios'
 import {useCookies} from "react-cookie";
 
@@ -9,6 +9,7 @@ export const UserProvider = (props) => {
     const [cookies, setCookies, removeCookies] = useCookies(["token"])
 
     const [logged_in, set_logged_in] = useState(null)
+    const [user, set_user] = useState(null)
     const [errors, set_errors] = useState([])
     const API_URL = process.env.REACT_APP_API_URL
 
@@ -88,6 +89,28 @@ export const UserProvider = (props) => {
         }
     }
 
+    const fetch_current_user = async () => {
+        const res = await axios({
+            method: "get",
+            url: `${API_URL}users/`,
+            headers: {
+                authorization: `token ${logged_in}`
+            }
+        })
+
+        set_user(res.data)
+    }
+
+    const update_profile = (form_data) => {
+        console.log("Update user profile!")
+    }
+
+    useEffect(() => {
+        if(logged_in){
+            fetch_current_user()
+        }
+    }, [logged_in])
+
     return (
         <UserContext.Provider value={
             {
@@ -97,12 +120,15 @@ export const UserProvider = (props) => {
                 errors: errors,
                 set_errors: set_errors,
 
+                user: user,
+
                 log_in_user: log_in_user,
                 validate_email: validate_email,
                 check_token: check_token,
                 log_out_user: log_out_user,
                 register_user: register_user,
-                check_passwords: check_passwords
+                check_passwords: check_passwords,
+                update_profile: update_profile
             }
         }>
 

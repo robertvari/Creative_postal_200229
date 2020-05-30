@@ -20,7 +20,7 @@ function MenuItem(props) {
 
 
 function Sidebar(props) {
-    const {logged_in} = useContext(UserContext)
+    const {logged_in, user} = useContext(UserContext)
 
     return (
         <div>
@@ -32,7 +32,7 @@ function Sidebar(props) {
 
                 {logged_in?
                     <Fragment>
-                        <Link to="/profile/robert_vari"><ProfilePicture width={"150px"} index={0}/></Link>
+                        <ProfilePicture width={"150px"} user={user}/>
 
                         <hr/>
 

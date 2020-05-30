@@ -1,4 +1,8 @@
 .profile_picture {
     border-radius: 50%;
     align-self: center;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    justify-self: center;
 }
