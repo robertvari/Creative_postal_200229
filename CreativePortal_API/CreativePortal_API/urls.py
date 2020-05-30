@@ -15,7 +15,8 @@ urlpatterns = [
     path('api/auth/registration/account-confirm-email/<key>/', confirm_email),
     path('api/auth/registration/', include('rest_auth.registration.urls')),
 
-    path('api/users/', include('users.urls'))
+    path('api/users/', include('users.urls')),
+    path('api/posts/', include('posts.urls'))
 ]
 
 

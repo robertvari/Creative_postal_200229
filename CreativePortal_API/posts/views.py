@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-# Create your views here.
+from .models import Post
+from .serialisers import PostItemSerializer
+
+
+class PostListView(ListAPIView):
+    queryset = Post.objects.all()
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    serializer_class = PostItemSerializer
