@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Post
+from .models import Post, Comment
 
 
 class UserFieldSerializer(serializers.RelatedField):
@@ -47,4 +47,17 @@ class PostItemSerializer(serializers.ModelSerializer):
             'comments',
             'likes',
             'favorites'
+        ]
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    user = UserFieldSerializer(read_only=True)
+
+    class Meta:
+        model = Comment
+        fields = [
+            "id",
+            "post",
+            "user",
+            "comment"
         ]
