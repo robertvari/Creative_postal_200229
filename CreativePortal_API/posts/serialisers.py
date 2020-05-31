@@ -46,8 +46,10 @@ class PostItemSerializer(serializers.ModelSerializer):
             'image',
             'comments',
             'likes',
-            'favorites'
+            'favorites',
+            'slug'
         ]
+
 
 
 class CommentSerializer(serializers.ModelSerializer):

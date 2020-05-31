@@ -7,12 +7,14 @@ import Logout from "./component/user/Logout";
 import Login from "./component/user/Login";
 import Registration from "./component/user/Registration";
 import ConfirmEmail from "./component/user/ConfirmEmail";
+import {PostProvider} from "./component/context/PostContext";
 
 
 function App() {
   return (
   <UserProvider>
-        <div className="App">
+      <PostProvider>
+            <div className="App">
             <Router>
                 <Switch>
                     <Route path="/user/logout">
@@ -37,7 +39,8 @@ function App() {
                 </Switch>
             </Router>
         </div>
-      </UserProvider>
+      </PostProvider>
+  </UserProvider>
 
   );
 }

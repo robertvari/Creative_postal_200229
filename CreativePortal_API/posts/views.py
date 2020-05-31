@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -12,6 +12,15 @@ class PostListView(ListAPIView):
     queryset = Post.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = PostItemSerializer
+
+
+class PostDetailsView(APIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        return Response(PostItemSerializer(post, context={"request": request}).data)
+
 
 
 class CreatePostView(APIView):
